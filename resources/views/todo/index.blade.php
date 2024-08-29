@@ -18,12 +18,12 @@
                     <input type="text" name="title" class="form-control" placeholder="What needs to be done?">
                 </form>
                 <div class="mt-3">
-                    @foreach ($todos as $todo)
+                    @foreach ($todos as $todo )
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <form action="{{ route('todos.updateStatus', $todo->id) }}" method="POST" class="d-inline">
                                 @csrf
-                                @method('PUT') <!-- Assuming you're using PUT for status update -->
+                                @method('PUT') 
                                 <input type="checkbox" onclick="this.form.submit()" {{ $todo->status == 'complete' ? 'checked' : '' }}>
                                 <label>{{ $todo->title }}</label>
                             </form>
